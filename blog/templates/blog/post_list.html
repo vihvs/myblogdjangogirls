@@ -10,16 +10,15 @@
     </div>
 
     <div>
-        <h6>Esse título é <em>bem</em> menor</h6>
-        <p>Vamos fazer um <a href="http://www.google.com">link</a></p>
+      {% for post in posts %}
+        {{ post }}
     </div>
 
     <div>
-    <p>E uma lista</p>
-      <ul><li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
+      <p>published: {{post.published_date}}</p>
+      <h1><a href="">{{post.title}}</a></h1>
+      <p>{{post.text|linebreaks}}</p>
     </div>
+    {% endfor %}
   </body>
 </html>
